@@ -1,0 +1,212 @@
+/*
+-------------------------
+Ryan Harang, 7/25/2023
+-------------------------
+Table of Contents
+1. Root
+2. Container Sizings
+3. Board Styling
+4. Stone Styling
+5. Console Styling
+6. Button Styling
+7. Game-Over Styling
+8. Mobile Styling
+-------------------------
+*/
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap");
+
+#root {
+  align-items: center;
+  justify-content: center;
+  font-family: "Kanit", sans-serif;
+}
+
+/* Container Sizings */
+.app-container {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 70% 30%;
+  margin: 2%;
+}
+
+.board-container {
+  margin-left: 15%;
+}
+
+.console-container {
+  margin-right: 13%;
+}
+
+/* Board Styling */
+.board {
+  display: grid;
+  grid-template-columns: repeat(19, 2vw); /* Width of each cell */
+  grid-template-rows: repeat(19, 2vw); /* Height of each cell */
+  gap: 0.25vw; /* Gap between cells */
+  max-width: 42.65vw;
+  max-height: 42.65vw;
+  margin: 0 auto;
+  background-image: url("assets/goBoard.png");
+  background-size: 92.7%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ccc;
+  padding: 2vw;
+}
+
+/* Stone Styling */
+.stone {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.player-two {
+  background: linear-gradient(
+    to right bottom,
+    rgba(0, 67, 255, 0.8),
+    rgba(20, 90, 240, 0.5)
+  );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.8px);
+  -webkit-backdrop-filter: blur(2.8px);
+  border: 1px solid rgba(130, 128, 242, 0.33);
+}
+
+.player-one {
+  background: linear-gradient(
+    to right bottom,
+    rgba(187, 0, 0, 0.8),
+    rgba(200, 60, 60, 0.5)
+  );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.8px);
+  -webkit-backdrop-filter: blur(2.8px);
+  border: 1px solid rgba(242, 65, 65, 0.3);
+}
+
+.empty {
+  border: none;
+  /*border: 1px solid #000;*/
+  background-color: transparent;
+}
+
+/* Console Styling */
+.console {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.9vw;
+  width: 14vw;
+  font-family: "Kanit", sans-serif;
+}
+
+.info-item {
+  margin: 0;
+}
+
+/* Button Styling */
+.controls-list {
+  display: grid;
+}
+
+/* Buttons */
+.controls {
+  font-family: "Kanit", sans-serif;
+  margin-top: 0.5vw;
+  height: 5vw;
+  width: 14vw;
+  font-size: 2vw;
+  border-radius: 1.5vw;
+}
+
+/* Rules */
+.rules {
+  margin-top: 0.5vw;
+  font-size: 1.24vw;
+  padding: 0.1vw;
+  border: 1px solid #ccc;
+  border-radius: 2%;
+  width: 27vw;
+}
+
+/* Game-Over Styling */
+.game-over {
+  position: fixed;
+  top: 23vw;
+  left: 32.1vw;
+  background-color: rgba(40, 32, 32, 0.6);
+  padding: 0.9vw;
+  font-size: 2vw;
+  font-weight: bold;
+  border-radius: 1.5vw;
+  pointer-events: none;
+}
+
+/* Hidden */
+.hide {
+  display: none;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  /* Container Sizings */
+  .app-container {
+    /* Change to a single column layout */
+    grid-template-columns: 1fr;
+    margin: 5%;
+  }
+
+  .board-container {
+    margin: 0;
+  }
+
+  .console-container {
+    margin: 0;
+  }
+
+  /* Board Styling */
+  .board {
+    grid-template-columns: repeat(19, 4.25vw); /* Adjust width of each cell */
+    grid-template-rows: repeat(19, 4.25vw); /* Adjust height of each cell */
+    max-width: 95vw;
+    max-height: 95vw;
+    padding: 4vw;
+  }
+
+  /* Console Styling */
+  .console {
+    font-size: 8vw; /* Adjust font size for smaller screens */
+    width: 80vw;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Buttons */
+  .controls {
+    height: 14vw;
+    width: 80vw;
+    font-size: 8vw;
+    border-radius: 3vw;
+    margin-top: 2vw;
+  }
+
+  /* Rules */
+  .rules {
+    font-size: 6vw;
+    width: 80vw;
+    padding: 1vw;
+    border-radius: 2vw;
+  }
+
+  /* Game-Over Styling */
+  .game-over {
+    top: 20%;
+    left: 11.5%;
+    font-size: 10vw;
+    padding: 1.5vw;
+    border-radius: 3vw;
+  }
+}
